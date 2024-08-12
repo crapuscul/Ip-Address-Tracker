@@ -1,10 +1,13 @@
-
-
-
-const request = "https://geo.ipify.org/api/v2/country,city?apiKey=at_4Rz5kqTPfOVjktmj5QPaYNsm8hqvr&ipAddress=8.8.8.8";
 const apiKey = "at_4Rz5kqTPfOVjktmj5QPaYNsm8hqvr"
-let map; // Declare map variable outside the event listener
 const searchbtnEl = document.querySelector(".searchbtn");
+
+// Add a default tile layer (OpenStreetMap) to display on load
+let map =L.map('map').setView([34.08057, -118.07285], 13);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
 
 searchbtnEl.addEventListener("click", () =>{
 
