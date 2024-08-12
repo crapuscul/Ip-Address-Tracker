@@ -1,0 +1,141 @@
+/* ## Colors
+
+- Very Dark Gray: hsl(0, 0%, 17%)
+- Dark Gray: hsl(0, 0%, 59%)
+
+## Typography
+
+### Body Copy
+
+- Font size (text input): 18px
+
+### Font
+
+- Family: [Rubik](https://fonts.google.com/specimen/Rubik)
+- Weights: 400, 500, 700
+
+> 💎 [Upgrade to Pro](https://www.frontendmentor.io/pro?ref=style-guide) for design file access to see all design details and get hands-on experience using a professional workflow with tools like Figma. */
+:root{
+    --font: "Rubik", sans-serif;
+    --headings-color: hsl(0, 0%, 59%);
+    --body-color: hsl(0, 0%, 17%);
+
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    font-family: var(--font);
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+.searching-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: url("/images/pattern-bg-desktop.png") center no-repeat;
+    background-size: cover;
+    text-align: center;
+    padding-bottom: 80px;
+    z-index: 1;
+    position: relative;
+}
+h2{
+    
+    font-weight: 500;
+    color: white;
+}
+input{
+    cursor: pointer;
+    margin: 0;
+    padding: 12px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border: none;
+    min-width: 25%;
+    font-weight: 400;
+  
+    
+
+} 
+input::placeholder{
+    color:  hsl(0, 7%, 80%) ;
+    font-weight: 600;
+}
+button{
+    cursor: pointer;
+    vertical-align: middle;
+    border: 0;
+    height: 40px;
+    width: 34px;
+    border-top-right-radius: 8px ;
+    border-bottom-right-radius: 8px ;
+    background-color: black;
+    
+}
+button:hover{
+    background-color: rgb(53, 52, 52);
+}
+button svg{
+    vertical-align:middle
+}
+.results-container{
+    position: absolute;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    align-content: center;
+    background-color: rgb(255, 255, 255);
+    width: 80%;
+    border-radius: 8px;
+    margin: 0 auto 0 auto ;
+    padding: 10px;
+    border:none;
+    z-index: 1111;
+}
+h4{
+    color: var(--headings-color);
+    font-size: 12px;
+    font-weight: 500;
+    margin: 0;
+}
+h3{
+    margin: 0;
+    color: var(--body-color);
+    font-weight: 600;
+}
+.ipaddress, .location, .timezone, .isp{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    width: 80%;
+    align-items: start;
+    /* border: rgb(212, 162, 162) solid 2px; */
+    margin: 0 auto;
+}
+#map{
+   
+    height: 100vh;
+    z-index: 1;
+}
+/* responsiveness */
+
+@media only screen and ( max-width:801px ) {
+    .results-container{
+        top: 45%;
+        margin: -0px auto 0 auto ;
+        grid-template-columns: 1fr;
+        width: 50%;
+        /* margin: 0 auto; */
+        row-gap: 20px;
+        padding: 20px 0;
+    }
+    .ipaddress, .location, .timezone, .isp{
+        align-items: center;
+        text-align: center;
+
+    }
+}
